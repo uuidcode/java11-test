@@ -1,4 +1,6 @@
-server.port = 37100
+server.port: 37100
+
+logging.level.org.springframework.web: DEBUG
 
 handlebars.enabled: true
 handlebars.prefix: classpath:templates/
@@ -9,5 +11,7 @@ handlebars.failOnMissingFile: false
 handlebars.bindI18nToMessageSource: false
 handlebars.prettyPrint: false
 handlebars.infiniteLoops: false
-
-spring.devtools.livereload.enabled  = true
+handlebars.resolver.javaBean: true
+handlebars.resolver.map: true
+handlebars.resolver.method: true
+handlebars.resolver.field: true
