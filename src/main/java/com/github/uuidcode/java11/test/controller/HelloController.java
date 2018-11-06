@@ -39,6 +39,10 @@ public class HelloController {
         model.addAttribute("projectList", projectList);
     }
 
+    @RequestMapping("/handlebars")
+    public void handlebars() {
+    }
+
     @ResponseBody
     @GetMapping("/api")
     public Mono<String> helloApi() {
