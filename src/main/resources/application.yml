@@ -1,6 +1,6 @@
 server.port: 37100
 
-logging.level.org.springframework.web: DEBUG
+logging.level.root: DEBUG
 
 handlebars.enabled: true
 handlebars.prefix: classpath:templates/
