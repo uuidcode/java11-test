@@ -19,9 +19,9 @@ public class MybatisConfiguration {
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
-        Resource[] arrResource = new PathMatchingResourcePatternResolver()
+        Resource[] resourceArray = new PathMatchingResourcePatternResolver()
             .getResources("classpath:mapper/**/*Mapper.xml");
-        sqlSessionFactoryBean.setMapperLocations(arrResource);
+        sqlSessionFactoryBean.setMapperLocations(resourceArray);
         sqlSessionFactoryBean.getObject().getConfiguration().setMapUnderscoreToCamelCase(true);
         return sqlSessionFactoryBean.getObject();
     }
