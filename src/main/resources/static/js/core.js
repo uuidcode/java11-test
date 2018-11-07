@@ -1,7 +1,7 @@
-var java11 = {
+var core = {
     init: function () {
         $('.load-button').on('click', function () {
-            java11.render({
+            core.render({
                 templateId: 'server-hbs',
                 api: '/api',
                 contentId: 'content'
@@ -33,5 +33,5 @@ var java11 = {
 };
 
 $(function () {
-   java11.init();
+   core.init();
 });
