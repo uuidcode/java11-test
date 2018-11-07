@@ -17,12 +17,14 @@ import com.github.uuidcode.java11.test.dao.CoreDao;
 public class MybatisConfiguration {
     @Bean
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(dataSource);
         Resource[] resourceArray = new PathMatchingResourcePatternResolver()
             .getResources("classpath:mapper/**/*Mapper.xml");
+
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setMapperLocations(resourceArray);
         sqlSessionFactoryBean.getObject().getConfiguration().setMapUnderscoreToCamelCase(true);
+
         return sqlSessionFactoryBean.getObject();
     }
 }
