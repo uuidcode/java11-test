@@ -25,6 +25,10 @@ var java11 = {
                 $('#' + contentId).html(html);
             }
         });
+    },
+
+    stringify: function (object) {
+        return JSON.stringify(object, null, 4);
     }
 };
 
