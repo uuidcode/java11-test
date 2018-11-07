@@ -25,5 +25,4 @@ public class MybatisConfiguration {
         sqlSessionFactoryBean.getObject().getConfiguration().setMapUnderscoreToCamelCase(true);
         return sqlSessionFactoryBean.getObject();
     }
-
 }
