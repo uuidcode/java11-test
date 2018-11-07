@@ -1,7 +1,10 @@
-{{> header}}
-<button type="button" class="add-project-button">add</button>
-<ul>
-{{#each projectList}}
-    <li>{{projectId}} - {{name}}</li>
-{{/each}}
-</ul>
+{{#partial "body"}}
+    <button type="button" class="add-project-button">add</button>
+    <ul>
+    {{#each projectList}}
+        <li>{{@index}} {{projectId}} - {{name}}</li>
+    {{/each}}
+    </ul>
+{{/partial}}
+
+{{> layout}}
