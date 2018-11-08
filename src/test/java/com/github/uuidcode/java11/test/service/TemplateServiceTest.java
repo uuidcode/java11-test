@@ -1,7 +1,5 @@
 package com.github.uuidcode.java11.test.service;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -33,6 +31,8 @@ public class TemplateServiceTest extends CoreTest {
         inputList.add("<ul>");
         inputList.add("{{#each projectList}}");
         inputList.add("<li>{{name}}</li>");
+        inputList.add("<li>helper-uuid: {{@index}} {{uuid}}</li>");
+        inputList.add("<li>helper-length: {{length name}}</li>");
         inputList.add("{{/each}}");
         inputList.add("</ul>");
 
