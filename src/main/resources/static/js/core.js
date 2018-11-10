@@ -1,21 +1,39 @@
 var core = {
     init: function () {
-        $('.load-button').on('click', function () {
-            core.render({
+        $('.embedded-load-button').on('click', function () {
+            core.renderWithEmbedded({
                 templateId: 'server-hbs',
+                api: '/api',
+                contentId: 'content'
+            });
+        });
+
+        $('.precompile-load-button').on('click', function () {
+            core.renderWithPrecompile({
+                templateId: 'server',
                 api: '/api',
                 contentId: 'content'
             });
         });
     },
 
-    render: function (option) {
+    renderWithEmbedded: function (option) {
         var templateId = option.templateId;
+        var source = jQuery('#' + templateId).html();
+        option.template = Handlebars.compile(source);
+        core.render(option);
+    },
+
+    renderWithPrecompile: function (option) {
+        var templateId = option.templateId;
+        option.template = Handlebars.templates[templateId];
+        core.render(option);
+    },
+
+    render: function (option) {
+        var template = option.template;
         var api = option.api;
         var contentId = option.contentId;
-
-        var source = jQuery('#' + templateId).html();
-        var template = Handlebars.compile(source);
 
         $.ajax({
             url: api,

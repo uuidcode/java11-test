@@ -2,11 +2,16 @@
 
 {{embedded "server"}}
 
+<script type="text/javascript">
+    {{precompile "server"}}
+</script>
+
 <ul>
     <li><a href="/api">/api</a></li>
     <li><a href="/server">/server</a></li>
     <li><a href="/webClient">/webClient</a></li>
 </ul>
 
-<button type="button" class="load-button">load</button>
+<button type="button" class="embedded-load-button">embedded load</button>
+<button type="button" class="precompile-load-button">precompile load</button>
 <div id="content"></div>
