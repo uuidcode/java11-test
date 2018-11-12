@@ -15,5 +15,8 @@ public class WebConfiguration implements WebMvcConfigurer {
 
         registry.addResourceHandler("/js/**")
             .addResourceLocations("classpath:/static/js/");
+
+        registry.addResourceHandler("/favicon.ico")
+            .addResourceLocations("classpath:/static/favicon.ico");
     }
 }
