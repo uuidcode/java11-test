@@ -17,7 +17,21 @@ public class ProjectService {
         return this.projectDao.findAll();
     }
 
-    public int insert(Project project) {
-        return this.projectDao.insert(project);
+    public Project insert(Project project) {
+        this.projectDao.insert(project);
+        return this.select(project);
+    }
+
+    public int delete(Project project) {
+        return this.projectDao.delete(project);
+    }
+
+    public Project update(Project project) {
+        this.projectDao.update(project);
+        return this.select(project);
+    }
+
+    public Project select(Project project) {
+        return this.projectDao.select(project);
     }
 }
